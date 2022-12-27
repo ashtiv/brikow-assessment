@@ -1,35 +1,33 @@
-import React from 'react';
-import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 const generatePDF = () => {
-    // Select the element that you want to convert to a PDF
-    const element = document.getElementById('my-element');
-
-    // Use html2canvas to convert the element to a canvas
-    html2canvas(element).then(canvas => {
-        // Get the canvas data as a data URL
-        const dataURL = canvas.toDataURL();
-
-        // Create a new PDF document
-        const pdf = new jsPDF();
-
-        // Add the canvas data as an image to the PDF document
-        pdf.addImage(dataURL, 'JPEG', 0, 0);
-
-        // Save the PDF document
-        pdf.save('my-document.pdf');
+    const doc = new jsPDF({
+        orientation: 'p',
+        unit: 'px',
+        format: 'a4',
+        hotfixes: ['px_scaling'],
     });
+    html2canvas(document.getElementById('my-element'), {
+        width: 800,
+        height: 1600
+    }).then((canvas) => {
+        const img = canvas.toDataURL("image/png");
+        doc.addImage(img, "PNG", 0, 0, 800, 1600);
+        doc.save("p&lstatement.pdf");
+    })
 }
+
 const DownloadButton = () => {
     return (
         <button onClick={generatePDF}>Download PDF</button>
     );
 }
+
 const Billpage = () => {
     return (
         <div>
-            <table id='my-element' style={{ width: '600px' }}>
+            <table id='my-element' style={{ height: '400px', width: '800px', padding: '20px' }}>
                 <caption>The Three Most Popular JavaScript Libraries</caption>
                 <thead>
                     <tr>
@@ -63,4 +61,5 @@ const Billpage = () => {
         </div>
     );
 }
-export default Billpage
+
+export default Billpage;

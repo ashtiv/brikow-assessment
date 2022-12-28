@@ -46,18 +46,13 @@
   display: table-cell;
 }
 
-.hewi {
-  height: 400px !important;
-  width: 1200px !important;
-}
 
-.height52 {
-  height: 52.8px !important;
-}
 
 .height65 {
-  height: 50px !important;
+  height: 65px !important;
 }
+
+
 
 .tc {
   position: relative;
@@ -66,4 +61,21 @@
 
 .w120 {
   width: 120px !important;
+}
+
+.w360 {
+  width: 360px !important;
+}
+
+.w720 {
+  width: 720px !important;
+}
+
+.noborder {
+  border: none !important;
+}
+
+input {
+  width: 90px !important;
+  /* border: black solid 1px; */
 }

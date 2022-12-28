@@ -1,18 +1,17 @@
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import TableRow1 from './TableRow1';
+import Thead from './Thead';
+import TableRow2 from './TableRow2';
+import TableRow12 from './TableRow12';
+import TableRowLessAdvInput from './TableRowLessAdvInput';
 
 const generatePDF = () => {
 
     html2canvas(document.getElementById('my-element'), {
     }).then((canvas) => {
         const img = canvas.toDataURL("image/png");
-        // const doc = new jsPDF({
-        //     orientation: 'p',
-        //     unit: 'px',
-        //     hotfixes: ['px_scaling'],
-        // });
-        var doc = new jsPDF("l", "px", [200, 600]);
+        var doc = new jsPDF("l", "px", [500, 660]);
 
         var width = doc.internal.pageSize.getWidth();
         var height = doc.internal.pageSize.getHeight();
@@ -40,66 +39,33 @@ const Billpage = () => {
             <div id='my-element' class="container p-10 text-xs" >
                 <div class="flex flex-col">
                     <div class="">
-                        <div class="py-2 inline-block min-w-full">
+                        <div class="py-2 inline-block">
                             <div class="">
-                                <table class="min-w-full border text-center border-solid border-2 border-black hewi">
-                                    <thead class="border-b font-bold border-solid border-2 border-black">
-                                        <tr>
-                                            <th scope="col" class="text-xs text-gray-900 px-6 py-4 border-r border-solid border-2 border-black">
-                                                Serial No.
-                                            </th>
-                                            <th scope="col" class="text-xs text-gray-900 px-6 py-4 border-r border-solid border-2 border-black">
-                                                Description
-                                            </th>
-                                            <th scope="col" class="text-xs text-gray-900 px-6 py-4 border-r border-solid border-2 border-black">
-                                                Unit
-                                            </th>
-                                            <th scope="col" class="text-xs text-gray-900 px-6 py-4 border-r border-solid border-2 border-black">
-                                                Rate
-                                            </th>
-                                            <th className='flex h-full'>
-                                                <th scope="col" class="text-xs text-gray-900 flex flex-col w-1/2 h-full border-black">
-                                                    <th class="text-xs text-gray-900  w-full border-b border-r p-2  border-black">Quantity</th>
-                                                    <tr class="text-xs text-gray-900  w-full flex ">
-                                                        <th className='w-1/3 h-full border-r p-2 border-black'>Previous</th>
-                                                        <th className='w-1/3 h-full border-r p-2 border-black'>This</th>
-                                                        <th className='w-1/3 h-full p-2 border-black border-r border-collapse'>Cumulative</th>
-                                                    </tr>
-                                                </th>
-                                                <th scope="col" class="text-xs text-gray-900 flex flex-col w-1/2 h-full  border-black">
-                                                    <th class="text-xs text-gray-900  w-full border-b border-r p-2  border-black">Amount</th>
-                                                    <tr class="text-xs text-gray-900  w-full flex ">
-                                                        <th className='w-1/3 h-full border-r p-2 border-black'>Previous</th>
-                                                        <th className='w-1/3 h-full border-r p-2 border-black'>This</th>
-                                                        <th className='w-1/3 h-full p-2 border-black border-r border-collapse'>Cumulative</th>
-                                                    </tr>
-                                                </th>
-                                            </th>
-                                            <th class="text-xs text-gray-900 text-center">
-                                                Remarks
-                                            </th>
-                                        </tr>
-                                    </thead>
+                                <table class="border text-center border-solid border-2 border-black">
+                                    <Thead />
                                     <tbody>
-                                        <TableRow1 val="A" />
-                                        <TableRow1 val="1" />
-                                        <TableRow1 val="2" />
-                                        <TableRow1 val="3" />
-                                        <TableRow1 val="" />
-                                        <TableRow1 val="B" />
-                                        <TableRow1 val="1" />
-                                        <TableRow1 val="2" />
-                                        <TableRow1 val="" />
-                                        <TableRow1 val="" />
-                                        <TableRow1 val="" />
-                                        <TableRow1 val="" />
-                                        <TableRow1 val="" />
-                                        <TableRow1 val="" />
-                                        <TableRow1 val="" />
-                                        <TableRow1 val="" />
-                                        <TableRow1 val="" />
+                                        <TableRow1 val="A" desc="Grante Work" unit="" />
+                                        <TableRow1 val="1" desc="Grante Flooring" unit="SFT" />
+                                        <TableRow1 val="2" desc="Grante Patti" unit="RFT" />
+                                        <TableRow1 val="3" desc="Grante Half Moulding" unit="RFT" />
+                                        <TableRow1 val="" desc="" unit="" />
+                                        <TableRow1 val="B" desc="Tiles Work" unit="" />
+                                        <TableRow1 val="1" desc="Wall Tiles" unit="SFT" />
+                                        <TableRow1 val="2" desc="Floor Tiles" unit="SFT" />
+                                        <TableRow1 val="" desc="Table Top" unit="no-1" />
+                                        <TableRow1 val="" desc="" unit="no-2" />
+                                        <TableRow1 val="" desc="" unit="no-3" />
+                                        <TableRow1 val="" desc="" unit="no-4" />
+                                        <TableRow1 val="" desc="Vertical Table Top" unit="no-2" />
+                                        <TableRow1 val="" desc="" unit="no-3" />
+                                        <TableRow1 val="" desc="" unit="" />
+                                        <TableRow12 val="" desc="TOTAL AMOUNT" unit="" />
+
                                     </tbody>
                                 </table>
+                                <TableRow2 desc="HOLD FOR DLP @5%" />
+                                <TableRowLessAdvInput desc="Less Advance" />
+                                <TableRow2 desc="BALANCE TO BE PAID IN BG LINK" />
                             </div>
                         </div>
                     </div>

@@ -32,7 +32,38 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.perfheight {
+  height: 49.6px !important;
+}
+
+.disin {
+  display: table-cell;
+}
+
+.hewi {
+  height: 400px !important;
+  width: 1200px !important;
+}
+
+.height52 {
+  height: 52.8px !important;
+}
+
+.height65 {
+  height: 50px !important;
+}
+
+.tc {
+  position: relative;
+  top: 30%;
+}
+
+.w120 {
+  width: 120px !important;
 }

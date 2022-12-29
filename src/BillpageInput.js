@@ -252,30 +252,27 @@ function BillpageInput() {
         html2canvas(document.getElementById('my-element'), {
         }).then((canvas) => {
             const img = canvas.toDataURL("image/png");
-            var doc = new jsPDF("l", "px", [500, 660]);
+            var doc = new jsPDF("1.2", "px", [1500, 1600]);
 
             var width = doc.internal.pageSize.getWidth();
             var height = doc.internal.pageSize.getHeight();
-            // doc.addImage(img, "PNG", 0, 0, 600, 200);
             doc.addImage(img, 'JPEG', 0, 0, width, height);
-            doc.save("p&lstatement.pdf");
+            doc.save("tiles&stone_bill.pdf");
         })
     }
 
     const DownloadButton = () => {
         return (
-            <button onClick={generatePDF}>Download PDF</button>
+            <button onClick={generatePDF} className=" border-green-600 border-8 p-5 rounded-3xl m-5">Download PDF</button>
         );
     }
     return (
         <div>
 
-            <h1 class="text-3xl font-bold underline">
-                Hello world!
-            </h1>
-            <h2>Responsive Table with RWD-Table-Patterns</h2>
-
-            <div id='my-element' class="container p-10 text-xs" >
+            <div id='my-element' class="container  text-xs" >
+                <h1 class="text-3xl font-bold borderb30 border-black w-1/4 ml200 mt-5 p-5">
+                    Tiles & Stone work
+                </h1>
                 <div class="flex flex-col">
                     <div class="">
                         <div class="py-2 inline-block">

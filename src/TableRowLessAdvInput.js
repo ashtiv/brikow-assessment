@@ -128,12 +128,9 @@ function TableRowLessAdvInput(props) {
                     <span className='tc'>{props.desc}</span>
                 </th>
                 <th scope="col" class="text-xs text-gray-900 height65 flex w360 height65  border-black">
-                    {/* <tr class="text-xs text-gray-900  w-full border-b border-r p-2  border-black">Amount</tr> */}
-                    {/* <tr class="text-xs text-gray-900  w-full flex "> */}
                     <tr className='w120 h-full border p-2 border-black height65'><InputElementpr dothis={props.dothis} className='align-middle tc' /></tr>
                     <tr className='w120 h-full border p-2 border-black height65'><InputElementthis dothis2={props.dothis2} className='align-middle tc' /></tr>
                     <tr className='w120 h-full p-2 border-black border height65'><InputElementcum dothis3={props.dothis3} className='align-middle tc' /></tr>
-                    {/* </tr> */}
                 </th>
             </table>
             <td class="text-xs w120 text-gray-900 text-center">

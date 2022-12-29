@@ -79,3 +79,11 @@ input {
   width: 90px !important;
   /* border: black solid 1px; */
 }
+
+.borderb30 {
+  border-bottom: black solid 30px;
+}
+
+.ml200 {
+  margin-left: 200px;
+}

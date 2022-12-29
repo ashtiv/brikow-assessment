@@ -21,9 +21,9 @@ function TableRow2(props) {
                 <th scope="col" class="text-xs text-gray-900 height65 flex w360 height65  border-black">
                     {/* <tr class="text-xs text-gray-900  w-full border-b border-r p-2  border-black">Amount</tr> */}
                     {/* <tr class="text-xs text-gray-900  w-full flex "> */}
-                    <tr className='w120 h-full border p-2 border-black height65'><span className='align-middle tc'></span></tr>
-                    <tr className='w120 h-full border p-2 border-black height65'><span className='align-middle tc'></span></tr>
-                    <tr className='w120 h-full p-2 border-black border height65'><span className='align-middle tc'></span></tr>
+                    <tr className='w120 h-full border p-2 border-black height65'><span className='align-middle tc'>{props.valpr}</span></tr>
+                    <tr className='w120 h-full border p-2 border-black height65'><span className='align-middle tc'>{props.valthis}</span></tr>
+                    <tr className='w120 h-full p-2 border-black border height65'><span className='align-middle tc'>{props.valcum}</span></tr>
                     {/* </tr> */}
                 </th>
             </table>
